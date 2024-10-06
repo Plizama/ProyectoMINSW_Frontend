@@ -40,28 +40,7 @@ export default function Sidemenu({ open, toggleDrawer }) {
             <PeopleAltIcon />
           </ListItemIcon>
           <ListItemText primary="Empleados" />
-        </ListItemButton>
-
-        <ListItemButton onClick={() => navigate()}>
-          <ListItemIcon>
-            <MoreTimeIcon />
-          </ListItemIcon>
-          <ListItemText primary="Horas Extra" />
-        </ListItemButton>
-
-        <ListItemButton onClick={() => navigate()}>
-          <ListItemIcon>
-            <PaidIcon />
-          </ListItemIcon>
-          <ListItemText primary="Planilla Sueldos" />
-        </ListItemButton>
-
-        <ListItemButton onClick={() => navigate()}>
-          <ListItemIcon>
-            <CalculateIcon />
-          </ListItemIcon>
-          <ListItemText primary="Calcular Planilla" />
-        </ListItemButton>
+        </ListItemButton>      
         <ListItemButton onClick={() => navigate("/LoadAccessControl")}>
           <ListItemIcon>
             <AnalyticsIcon />
@@ -73,23 +52,29 @@ export default function Sidemenu({ open, toggleDrawer }) {
       <Divider />
 
       <List>
-        <ListItemButton onClick={() => navigate()}>
+        <ListItemButton onClick={() => navigate("/discountHours/list")}>
           <ListItemIcon>
             <DiscountIcon />
           </ListItemIcon>
           <ListItemText primary="Descuentos" />
         </ListItemButton>
-        <ListItemButton onClick={() => navigate()}>
+        <ListItemButton onClick={() => navigate("/extraHours/list")}>
           <ListItemIcon>
-            <HailIcon />
+            <MoreTimeIcon />
           </ListItemIcon>
-          <ListItemText primary="Vacaciones" />
+          <ListItemText primary="Horas Extra" />
         </ListItemButton>
-        <ListItemButton onClick={() => navigate()}>
+        <ListItemButton onClick={() => navigate("/paycheck/calculate")}>
           <ListItemIcon>
-            <MedicationLiquidIcon />
+            <CalculateIcon />
           </ListItemIcon>
-          <ListItemText primary="Licencias Medicas" />
+          <ListItemText primary="Calcular Planilla" />
+        </ListItemButton>
+        <ListItemButton onClick={() => navigate("/paycheck/Details")}>
+          <ListItemIcon>
+            <PaidIcon />
+          </ListItemIcon>
+          <ListItemText primary="Planilla Sueldos" />
         </ListItemButton>
       </List>
     </Box>
