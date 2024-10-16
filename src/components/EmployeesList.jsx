@@ -11,13 +11,13 @@ import Paper from "@mui/material/Paper";
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
 
-  // Función para obtener la lista de empleados desde el backend
+  // Obtener lista de empleados
   const init = () => {
     employeeService
       .getAll()
       .then((response) => {
         console.log("Mostrando listado de todos los empleados.", response.data);
-        setEmployees(response.data); // Almacenamos los empleados en el estado
+        setEmployees(response.data);
       })
       .catch((error) => {
         console.log(
@@ -27,16 +27,13 @@ const EmployeeList = () => {
       });
   };
 
-  // useEffect para llamar a init al montar el componente
   useEffect(() => {
     init();
   }, []);
 
   return (
-    <div>
-      <h2>Lista de Empleados</h2>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="employee table">
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
@@ -63,7 +60,6 @@ const EmployeeList = () => {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
   );
 };
 
