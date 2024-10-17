@@ -41,7 +41,7 @@ export default function Navbar() {
               margin: '10px 0', 
             }} 
           >
-            MueblesStgo: Recursos Humanos
+            MueblesStgo: Aplicacion web
           </Typography>
 
           <Button color="inherit" sx={{ fontSize: '1.2rem' }}>Login</Button> 
